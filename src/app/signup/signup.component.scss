@@ -1,0 +1,35 @@
+section.signuphere {
+  h1 {
+    text-align: center;
+  }
+  .signup-container {
+    .form-control-half {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.map-container {
+  width: 100%;
+}
+// agm-map{
+//     height: 450px;
+//     width:100%;
+// }
+
+#map {
+  width: 100%;
+  height: 450px;
+}
+
+mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.example-full-width{
+  width:50%;
+}

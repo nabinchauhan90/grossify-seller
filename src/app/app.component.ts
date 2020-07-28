@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignupService } from './pages/signup/signup.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'seller-grossify';
+  constructor(private mapservice:SignupService){
+    // this.mapservice.Autocomplete();
+  }
 }

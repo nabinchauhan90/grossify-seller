@@ -1,0 +1,28 @@
+section.signup {
+  .signup-container {
+    margin: 3rem 2rem;
+    .brand-logo {
+      text-align: center;
+      img {
+        width: 100px;
+      }
+    }
+    h4 {
+      text-align: center;
+      margin: 1rem;
+    }
+    .signup-form-container {
+      // margin:2rem 0rem;
+      margin: 2rem auto;
+      #map {
+        // margin:0.5rem 0rem;
+        width: 100%;
+        height: 450px;
+      }
+      .map-address-search{
+        margin-bottom: 2rem;
+      }      
+    }
+  }
+}
+

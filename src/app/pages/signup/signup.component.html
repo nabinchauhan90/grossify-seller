@@ -1,0 +1,188 @@
+<section class="signup">
+  <div class="container">
+    <div class="signup-container">
+      <div class="brand-logo">
+        <a routerLink="/"
+          ><img src="../../../assets/Grossify_ business logo.png" alt=""
+        /></a>
+      </div>
+      <mat-horizontal-stepper linear coffset-md-2 col-md-8>
+        <mat-step >
+          <ng-template matStepLabel>Seller Details</ng-template>
+          <!-- <h4 style="text-align: center;">Create Your Account</h4> -->
+          <div class="signup-form-container offset-md-3 col-md-6">
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+              <div formGroupName="full-name">
+                <mat-form-field class="col-sm-12 col-md-6">
+                  <mat-label>First Name</mat-label>
+                  <input matInput formControlName="fname" placeholder="" />
+                </mat-form-field>
+                <mat-form-field class="col-sm-12 col-md-6">
+                  <mat-label>Last Name</mat-label>
+                  <input formControlName="lname" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <mat-form-field class="col-12">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  formControlName="email"
+                  type="email"
+                  placeholder=""
+                />
+                <mat-error
+                  *ngIf="
+                    signupForm.get('email').hasError('email') &&
+                    !signupForm.get('email').hasError('required')
+                  "
+                >
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('email').hasError('required')">
+                  Email is required
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Username</mat-label>
+                <input
+                  matInput
+                  formControlName="username"
+                  placeholder="Ex. uniquename2"
+                />
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput type="password" />
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Select User Role</mat-label>
+                <mat-select formControlName="role">
+                  <mat-option value="admin">Admin</mat-option>
+                  <mat-option value="client">Client</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Mobile No.</mat-label>
+                <input matInput formControlName="mobile" type="number" color="primary" />
+              </mat-form-field>
+              <button
+                type="submit"
+                [disabled]="!signupForm.valid"
+                matStepperNext
+                mat-raised-button
+                color="primary"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </mat-step>
+        <mat-step  [stepControl]="storeRegisterForm" [optional]="isOptional">
+          <ng-template matStepLabel>Store Location</ng-template>
+          <div class="signup-form-container offset-md-3 col-md-6">
+            <form [formGroup]="storeRegisterForm" (ngSubmit)="onSubmitStore()">
+              <mat-form-field class="col-12">
+                <mat-label>Select Category</mat-label>
+                <mat-select formControlName="category" multiple>
+                  <mat-option
+                    *ngFor="let category of categories"
+                    [value]="category"
+                    >{{ category.name }}</mat-option
+                  >
+                  <!-- <mat-option value="admin">Admin</mat-option>
+                                    <mat-option value="client">Client</mat-option> -->
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Store Code</mat-label>
+                <input type="text" matInput formControlName="store_code" />
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Store Name</mat-label>
+                <input type="text" matInput formControlName="store_name" />
+              </mat-form-field>
+              <mat-form-field class="col-12 map-address-search">
+                <mat-label>Address</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="address"
+                  id="pac-input"
+                  placeholder="Enter your store Location"
+                />
+              </mat-form-field>
+              <div id="map"></div>   
+              <button mat-raised-button matStepperPrevious color="primary">Back</button>   
+              <button
+                type="submit"
+                matStepperNext
+                mat-raised-button
+                color="primary"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </mat-step>
+        <mat-step  [optional]="isOptional">
+          <ng-template matStepLabel>Store Details</ng-template>
+          <div class="signup-form-container offset-md-3 col-md-6">
+            <form [formGroup]="storedetailsForm" (ngSubmit)="onSubmitStore()">
+              <mat-form-field class="col-12">
+                <mat-label>Shop Lisence No.</mat-label>
+                <input type="text" matInput >
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Gst No.</mat-label>
+                <input type="text" matInput >
+              </mat-form-field >
+              <mat-form-field class="col-12">
+                <mat-label>Shop Lisence No.</mat-label>
+                <input type="text" matInput >
+              </mat-form-field >
+              <mat-form-field class="col-12">
+                <mat-label>Shop Lisence No.</mat-label>
+                <input type="text" matInput >
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Store Contact No.</mat-label>
+                <input type="tel" matInput required >
+              </mat-form-field>
+              <mat-form-field class="col-12">
+                <mat-label>Minimum Shopping Amount</mat-label>
+                <input type="number" matInput >
+              </mat-form-field>
+              <mat-form-field class="col-12"> 
+                <mat-label>Delivery Rate</mat-label>
+                <input type="number" matInput >
+              </mat-form-field>         
+              <button mat-raised-button matStepperPrevious color="primary">Back</button>
+              <button
+                type="submit"
+                matStepperNext
+                mat-raised-button
+                color="primary"
+              >
+                Submit
+              </button>
+            </form>
+          </div>>
+        </mat-step>
+        <mat-step  [optional]="isOptional">
+          <ng-template matStepLabel>Done!</ng-template>
+          <div>
+            <h5 style="text-align: center;">Your shop has been registered !</h5>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+      <div class="signup-code" *ngIf="false">
+        <!-- <form [formGroup]="codeconfirmation">
+          <h1>Enter Your Code</h1>
+          <p>We've sent it to your email.</p>
+          Please Check Your Email!!!
+          <input type="text" />
+        </form> -->
+      </div>
+    </div>
+  </div>
+</section>

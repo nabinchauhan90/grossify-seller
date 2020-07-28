@@ -1,0 +1,93 @@
+$base-color: #f05e3c;
+$secondary-color: white;
+$third-color: rgba(45, 40, 39, 0.77);
+$base-background-image: linear-gradient(
+  to bottom,
+  #2c1a55,
+  #4f1b55,
+  #6c1e52,
+  #82264c,
+  #943544,
+  #9e3c41,
+  #a7453d,
+  #af4e39,
+  #b84e37,
+  #c04e35,
+  #c94d33,
+  #d14d30
+);
+section.footer {
+  padding: 0.5rem 4rem;
+  margin-top: 3rem;
+  .footer-container {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    .brand-logo {
+      //   @extend .navbar-brand;
+      img {
+        margin: 0rem 1rem 1rem 0rem;
+        width: 9.3rem;
+      }
+    }
+    .align-items-between {
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-links {
+      h3 {
+        font-size: 1.2rem;
+        color: $base-color;
+        margin: 0rem 0rem 1rem;
+        font-weight: 600;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          padding: 0.3rem 0rem;
+          a {
+            font-size: 1rem;
+            color: $third-color;
+          }
+        }
+      }
+    }
+    .social-links {
+      @extend .footer-links;
+      ul {
+        display: inline-flex;
+        li {
+          a {
+            font-size: 2rem;
+            // color:red;
+            text-decoration: none;
+            padding: 1rem 1rem 0rem 0rem;
+            &:hover {
+              color: $base-color;
+            }
+          }
+        }
+      }
+      button.btn-apple {
+        border: 0.0625rem solid $base-color;
+        color: $base-color;
+        padding: 0.4rem;
+        // width:10%;
+        &:hover {
+          color: $secondary-color;
+          background-color: $base-color;
+        }
+      }
+    }
+  }
+  .footer-copyright {
+    text-align: center;
+    p {
+      margin: 0;
+      color: $third-color;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+}
