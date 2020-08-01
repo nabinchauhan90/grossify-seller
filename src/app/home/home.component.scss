@@ -16,6 +16,7 @@ $base-background-image: linear-gradient(
   #c94d33,
   #d14d30
 );
+$base-gradient-image:linear-gradient(90deg,#f05e3c,#ef5e32,#ed5e26,#ea5f18,#e76000);
 
 .show-navbar{
   position: fixed;
@@ -36,6 +37,7 @@ section.class-navbar{
   width: 100%;
   // top:0;
   background-image: $base-background-image;
+  // background-image: $base-gradient-image;
   // position: fixed;
   .navbar-for{
     .hero-navigation {
@@ -407,14 +409,95 @@ section.offers{
       align-items: center;
       .button-offer-details{
         width:50%;
+        button{
+          border-color: $base-color;
+          color: $base-color;
+          &:hover{
+            color:$secondary-color;
+            background-color: $base-color;
+          }
+        }
+        .offers-text-info{
+          padding:2rem 0rem;
+        }
       }
       .money-back{
         width:50%;
+        padding: 0rem 1rem;
+        p{
+          text-align: center;
+        }
       }
     }
   }
 }
-
+section.client-says {
+  // margin:3rem;
+  margin-bottom: 4rem;
+  .client-says-container {
+    justify-content: space-between;
+    .client-says-heading {
+      text-align: center;
+      h1 {
+        padding: 0.5rem 0rem;
+        font-weight: 900;
+      }
+    }
+    // .client-says-seperator{
+    //     border-left: 1px solid $third-color;
+    //     // height: 14rem;
+    //     padding:0.5rem;
+    // }
+    .client-says-content {
+      padding: 0.5rem;
+      padding-top: 3rem;
+      span.quote-for-seller{
+        font-size: 3rem;
+        display: flex;
+        color:$base-color;
+        margin-bottom: -2.5rem;
+        margin-left: -2rem;
+        opacity: 0.4;
+      }
+      p {
+        text-align: left;
+        // margin: 1rem;
+        width: 80%;
+        font-style: italic;
+        line-height: 1.5rem;
+        font-size: 1rem;
+        margin-left: 0rem;
+        margin-right:1rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+      }
+      .client-details {
+        display: flex;
+        margin-top:2rem;
+        .client-image {
+          img {
+            width: 5.2rem;
+            height:5.2rem;
+            border-radius: 50%;
+          }
+        }
+        .client-details-text {
+          padding-left: 2rem;
+          h5 {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+          p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 0.8rem;
+            font-style: normal;
+          }
+        }
+      }
+    }
+  }
+}
 section.main-content-section {
   .main-content {
     padding: 4rem 0rem;
@@ -441,7 +524,7 @@ section.main-content-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: $base-background-image;
+            background-image: $base-gradient-image;
             width: 9rem;
             height: 9rem;
             border-radius: 50%;
